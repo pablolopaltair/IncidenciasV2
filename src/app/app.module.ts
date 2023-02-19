@@ -27,6 +27,8 @@ import { LoginComponent } from './login/login/login.component';
 import { RegisterComponent } from './login/register/register.component';
 import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
 import { provideAuth,getAuth } from '@angular/fire/auth';
+import { Mostrar2Component } from './componentes/gestion-usuarios/mostrar2/mostrar2.component';
+import { Editar2Component } from './componentes/gestion-usuarios/editar2/editar2.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +41,9 @@ import { provideAuth,getAuth } from '@angular/fire/auth';
     RevisionEditarComponent,
     SidebarComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    Mostrar2Component,
+    Editar2Component
   ],
   imports: [
     BrowserModule,

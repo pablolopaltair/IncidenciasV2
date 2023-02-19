@@ -10,6 +10,9 @@ import { RevisionEditarComponent } from './componentes/revision-editar/revision-
 import { RevisionComponent } from './componentes/revision/revision.component';
 import { LoginComponent } from './login/login/login.component';
 import { RegisterComponent } from './login/register/register.component';
+import { Mostrar2Component } from './componentes/gestion-usuarios/mostrar2/mostrar2.component';
+import { Editar2Component } from './componentes/gestion-usuarios/editar2/editar2.component';
+import { GuardLogeado } from './guards/guard-logeado.guard';
 
 
 
@@ -18,13 +21,15 @@ import { RegisterComponent } from './login/register/register.component';
 const routes: Routes = [
 
   {path: '',component:PrincipalComponent},
-  {path: 'show',component:MostrarComponent},
-  {path: 'create',component:CrearComponent},
-  {path: 'edit/:id',component:EditarComponent},
-  {path: 'check', component:RevisionComponent},
-  {path: 'checkEdit/:id', component:RevisionEditarComponent},
-  {path: 'login', component:LoginComponent},
-  {path: 'register', component:RegisterComponent}
+  {path: 'show',component:MostrarComponent, canActivate: [GuardLogeado]},
+  {path: 'create',component:CrearComponent, canActivate: [GuardLogeado]},
+  {path: 'edit/:id',component:EditarComponent, canActivate: [GuardLogeado]},
+  {path: 'check', component:RevisionComponent, canActivate: [GuardLogeado]},
+  {path: 'checkEdit/:id', component:RevisionEditarComponent, canActivate: [GuardLogeado]},
+  {path: 'login', component:LoginComponent, },
+  {path: 'register', component:RegisterComponent},
+  {path: 'users', component:Mostrar2Component,canActivate: [GuardLogeado]},
+  {path: 'usersEdit/:id', component:Editar2Component, canActivate: [GuardLogeado]}
 ];
 
 @NgModule({

@@ -20,8 +20,7 @@ import { Incidencia } from '../../modelos/incidencia.model';
   
 })
 export class MostrarComponent implements OnInit {
-  //Configuración de busqueda
-  searchText:any;
+
   //Array de Incidencia
   Incidencias : Incidencia[]
 
@@ -40,9 +39,6 @@ export class MostrarComponent implements OnInit {
     )
   }
 
-  search(){
-
-  }
   //Borrará el incidencia seleccionado (Se hace en este componente ya que no es necesario
   //crear un nuevo componente para el borrado)
   deleteRow = (incidencia) => this.incidenciaService.deleteIncidencia(incidencia);
